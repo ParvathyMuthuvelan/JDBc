@@ -8,12 +8,8 @@ public class Student {
 	private int sqlScore;
 	private int javaScore;
 	private int totalScore;
-	public int getTotalScore() {
-		return totalScore;
-	}
-	public void setTotalScore(int totalScore) {
-		this.totalScore = totalScore;
-	}
+	private double averageScore;
+	
 	public int getRegno() {
 		return regno;
 	}
@@ -44,9 +40,31 @@ public class Student {
 	public void setJavaScore(int javaScore) {
 		this.javaScore = javaScore;
 	}
+	public int getTotalScore() {
+		return totalScore;
+	}
+	public void setTotalScore(int totalScore) {
+		this.totalScore = totalScore;
+	}
+	
+	public double getAverageScore() {
+		return averageScore;
+	}
+	public void setAverageScore(double averageScore) {
+		this.averageScore = averageScore;
+	}
 	@Override
 	public String toString() {
 		return String.format("Student [regno=%s, name=%s, webScore=%s, sqlScore=%s, javaScore=%s, totalScore=%s]",
 				regno, name, webScore, sqlScore, javaScore, totalScore);
+	}
+	public void calculateAverageScore (int score [ ]){
+		double average=0;
+	    for(int i=0;i<score.length;i++)
+	    {
+	    	average+=score[i];
+	    }
+	    average/=3;
+	    this.averageScore=average;
 	}
 }
